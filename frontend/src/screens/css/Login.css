@@ -2,10 +2,11 @@
     background-color: rgb(255, 255, 255)
 }
 .loginContainer{
-    margin-top: 300px;
+    margin-top: 100px;
     margin-right: auto;
     margin-left: auto;
     font-family: 'Inter';
+    margin-bottom: 20px;
     color: rgba(0,0,0,0.87);
     height: 436px;
     width: 388px;
@@ -44,7 +45,7 @@
 }
 
 .welcome-signin{
-    margin-top: -15px;
+    margin-top: 15px;
     margin-bottom: 25px;
     font-size: 16px;
 }

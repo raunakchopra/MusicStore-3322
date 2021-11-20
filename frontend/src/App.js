@@ -1,8 +1,12 @@
 import './App.css';
-import Signup from './screens/Signup';
+import NavBar from './components/NavBar'
+import Signup from './screens/MainPage';
 function App() {
   return (
-    <Signup />
+    <div>
+      <NavBar />
+      <Signup />
+    </div>
   );
 }
 
