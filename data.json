@@ -22,6 +22,7 @@
         "music_clip": ""
     },
     {
+<<<<<<< HEAD
         "name": "Claudio Monteverdi: Madrigals",
         "category": "Baroque",
         "composer": "Claudio Monteverdi",
@@ -33,6 +34,8 @@
         "music_clip": ""
     },
     {
+=======
+>>>>>>> ac9e6228e08ebb522bdaeca4cbb81c1aba014177
         "name": "Bach, J.S.: Goldberg Variations, BWV 988",
         "category": "Baroque",
         "composer": "J.S. Bach",
