@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar'
-import Signup from './screens/MainPage';
+import Signup from './screens/Music';
 function App() {
   return (
     <div>
