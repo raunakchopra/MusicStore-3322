@@ -1,9 +1,36 @@
 import React from 'react'
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDrum, faGuitar } from '@fortawesome/free-solid-svg-icons'
+
+import './css/MainPage.css'
+
 function MainPage() {
     return (
-        <div>
-            
+        <div className="mainpage-container">
+            <div className="side-section">
+                <p className="category-title">Categories</p>
+                <div className="category-container">
+                    <FontAwesomeIcon className="category-icon" icon={faDrum}/>
+                    <p>Classical</p>
+                </div>
+                <div className="category-container">
+                    <FontAwesomeIcon className="category-icon" icon={faGuitar}/>
+                    <p>Baroque</p>
+                </div>
+                <div className="category-container">
+                    <FontAwesomeIcon className="category-icon" icon={faDrum}/>
+                    <p>Romantic</p>
+                </div>
+                <div className="category-container">
+                    <FontAwesomeIcon className="category-icon" icon={faGuitar}/>
+                    <p>Late 19th</p>
+                </div>
+            </div>
+            <div>
+
+            </div>
         </div>
     )
 }
