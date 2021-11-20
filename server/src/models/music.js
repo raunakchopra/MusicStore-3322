@@ -10,6 +10,8 @@ class Music {
             price: Number,
             published: Number,
             new_arrival: Boolean,
+            music_image: String,
+            music_clip: String
         }, { timestamps: true });
 
         this.model = mongoose.model('Music', MusicSchema);
