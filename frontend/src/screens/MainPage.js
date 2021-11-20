@@ -1,5 +1,6 @@
 import React from 'react'
 
+import MusicBox from '../components/MusicBox'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDrum, faGuitar } from '@fortawesome/free-solid-svg-icons'
@@ -28,8 +29,14 @@ function MainPage() {
                     <p>Late 19th</p>
                 </div>
             </div>
-            <div>
-
+            <div className="main-section">
+                <MusicBox />
+                <MusicBox />
+                <MusicBox />
+                <MusicBox />
+                <MusicBox />
+                <MusicBox />
+                <MusicBox />
             </div>
         </div>
     )
