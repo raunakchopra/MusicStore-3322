@@ -8,7 +8,7 @@ class Music {
             composer: String,
             description: String,
             price: Number,
-            published: Number,
+            published: String,
             new_arrival: Boolean,
             music_image: String,
             music_clip: String
