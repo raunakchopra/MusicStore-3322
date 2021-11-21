@@ -19,7 +19,8 @@ function NavBar() {
             <div className="buttonContainer">
                 <button className="searchButton">Sign In</button>
                 <button className="searchButton createAccountButton">Create Account</button>
-                <button className="searchButton">Cart</button>
+                <button className="cartButton">Cart</button>
+                <div className="cart-qty">10</div>
             </div>
         </div>
     )

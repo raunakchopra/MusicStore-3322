@@ -35,7 +35,7 @@
     width: 80px;
     font-size: 15px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: rgb(68, 81, 255);
     border: none;
     color: white;
@@ -43,13 +43,44 @@
     font-family: 'Inter';
 }
 
+.cartButton{
+    height: 35px;
+    width: 80px;
+    font-size: 15px;
+    cursor: pointer;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(68, 81, 255);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+.cartButton:hover{
+    background-color: rgb(24, 39, 215);
+}
+
+.cart-qty{
+    font-family: 'Inter';
+    width: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    display: flex;
+    margin-left: -10px;
+    padding-left: 5px;
+    color: white;
+    align-items: center;
+    background-color: rgb(68, 81, 255);
+}
 /* make this slower */
 .searchButton:hover{
     background-color: rgb(24, 39, 215);
 }
 
 .buttonContainer{
-    width: 350px;
+    width: 380px;
     display: flex;
     justify-content: space-between;
 }
