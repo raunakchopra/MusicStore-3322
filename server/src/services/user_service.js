@@ -9,16 +9,15 @@ class UserService extends Base {
     }
 
     signup = async ({
-        username,
+        // username,
         email,
-        firstName,
-        lastName,
+        // firstName,
+        // lastName,
         password,
-        gender,
-        profilePhoto
+        // gender,
+        // profilePhoto
     }) => {
-        console.log('Hi')
-        const userAlready = await this.model.findOne({ email, username });
+        const userAlready = await this.model.findOne({ email });
         if (userAlready) {
             throw error.CustomError('User with email/username already exists');
         }
@@ -28,13 +27,13 @@ class UserService extends Base {
             const saltRounds = 10;
             const pass = await bcrypt.hash(password, saltRounds);
             newUser = await this.model.create({
-                username,
+                // username,
                 email,
-                firstName,
-                lastName,
+                // firstName,
+                // lastName,
                 password: pass,
-                gender,
-                profilePhoto
+                // gender,
+                // profilePhoto
             });
         } catch (e) {
             throw e;
