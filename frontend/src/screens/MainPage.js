@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import MusicBox from '../components/MusicBox'
 
@@ -8,6 +8,14 @@ import { faDrum, faGuitar } from '@fortawesome/free-solid-svg-icons'
 import './css/MainPage.css'
 
 function MainPage() {
+    useEffect(() => {
+        const loggedInUser = JSON.parse(localStorage.getItem("user"));
+        console.log(loggedInUser)
+    //     if (loggedInUser) {
+    //     const foundUser = JSON.parse(loggedInUser);
+    //     console.log(foundUser)
+    // }
+    }, [])
     return (
         <div className="mainpage-container">
             <div className="side-section">

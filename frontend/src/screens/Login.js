@@ -2,18 +2,22 @@ import React, {useState} from 'react'
 import axios from 'axios'
 import './css/Login.css'
 
-const logInHandler = (email, password) => {
+const logInHandler = async (email, password) => {
+    let user
     const userDeatils = {
         email,
         password
     }
-;
-    axios.post('http://localhost:8080/v1/access/login', userDeatils ,{
+
+    await axios.post('http://localhost:8080/v1/access/login', userDeatils ,{
         'Access-Control-Allow-Origin': "http://localhost:8080"
     })
-    .then(res => console.log(res))
+    .then(res => user = res.data)
     .catch(err => console.log(err))
     .then(alert('Account Logged In'))
+
+    console.log(user)
+    localStorage.setItem('user', JSON.stringify(user))
 }
 
 function Login() {
