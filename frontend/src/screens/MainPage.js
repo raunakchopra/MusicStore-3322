@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Link } from "react-router-dom";
 import axios from 'axios'
 import MusicBox from '../components/MusicBox'
 
@@ -9,7 +10,6 @@ import './css/MainPage.css'
 
 function MainPage() {
     const [musicData, setMusicData] = useState([])
-    const [removeCategory, setRemoveCategory] = useState("")
     const [filterData, setFilterData] = useState([])
 
     useEffect(() => {
@@ -60,7 +60,7 @@ function MainPage() {
             </div>
             <div className="main-section">
                 {
-                    filterData.map((musicItem) => <MusicBox item={musicItem} />)
+                    filterData.map((musicItem) => <Link to={`/music/${musicItem._id}`}><MusicBox item={musicItem} /></Link>)
                 }
             </div>
         </div>
