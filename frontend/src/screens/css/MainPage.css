@@ -4,13 +4,13 @@
 }
 
 .main-section{
-    padding: 50px 80px;
+    padding: 50px 40px;
     display: flex;
     background-color:#f1f3f4;
     width: 85%;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-left:285px;
+    margin-left:217px;
     /* important */
 }
 .side-section{

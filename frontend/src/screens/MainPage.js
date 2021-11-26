@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
 import MusicBox from '../components/MusicBox'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,43 +8,60 @@ import { faDrum, faGuitar } from '@fortawesome/free-solid-svg-icons'
 import './css/MainPage.css'
 
 function MainPage() {
+    const [musicData, setMusicData] = useState([])
+    const [removeCategory, setRemoveCategory] = useState("")
+    const [filterData, setFilterData] = useState([])
+
     useEffect(() => {
-        const loggedInUser = JSON.parse(localStorage.getItem("user"));
-        console.log(loggedInUser)
-    //     if (loggedInUser) {
-    //     const foundUser = JSON.parse(loggedInUser);
-    //     console.log(foundUser)
-    // }
+        axios.get('http://localhost:8080/v1/music/', {
+        'Access-Control-Allow-Origin': "http://localhost:8080"
+        })
+        .then(res => {
+            setMusicData(res.data.musicItems)
+            setFilterData(res.data.musicItems)
+        })
+        .catch(err => console.log(err))
+
+        // const loggedInUser = JSON.parse(localStorage.getItem("user"));
+        
     }, [])
+
+    const handleFilterData = (category) => {
+        let temp = []
+        for(let i=0; i<musicData.length; ++i){
+            if(musicData[i].category === category){
+                temp.push(musicData[i])
+            }
+        }
+        setFilterData(temp)
+    }
+
+
     return (
         <div className="mainpage-container">
             <div className="side-section">
                 <p className="category-title">Categories</p>
-                <div className="category-container">
+                <div className="category-container" onClick={() => handleFilterData("Classical")}>
                     <FontAwesomeIcon className="category-icon" icon={faDrum}/>
                     <p>Classical</p>
                 </div>
-                <div className="category-container">
+                <div className="category-container" onClick={() => handleFilterData("Baroque")}>
                     <FontAwesomeIcon className="category-icon" icon={faGuitar}/>
                     <p>Baroque</p>
                 </div>
-                <div className="category-container">
+                <div className="category-container" onClick={() => handleFilterData("Romantic")}>
                     <FontAwesomeIcon className="category-icon" icon={faDrum}/>
                     <p>Romantic</p>
                 </div>
-                <div className="category-container">
+                <div className="category-container" onClick={() => handleFilterData("Late 19th")}>
                     <FontAwesomeIcon className="category-icon" icon={faGuitar}/>
                     <p>Late 19th</p>
                 </div>
             </div>
             <div className="main-section">
-                <MusicBox />
-                <MusicBox />
-                <MusicBox />
-                <MusicBox />
-                <MusicBox />
-                <MusicBox />
-                <MusicBox />
+                {
+                    filterData.map((musicItem) => <MusicBox item={musicItem} />)
+                }
             </div>
         </div>
     )
