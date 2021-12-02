@@ -3,7 +3,27 @@ import './css/Music.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
+const handleAddToCart = (data, qty) => {
+    let currCart = JSON.parse(localStorage.getItem("cart"));
+
+    let newCartItem = {
+        data,
+        qty
+    }
+
+    if(currCart !== null) {
+        currCart = [...currCart, newCartItem]
+    }
+    else{
+        currCart = [newCartItem]
+    }
+    localStorage.setItem('cart', JSON.stringify(currCart))
+    window.location.reload()
+}
+
+
 function Music() {
+    const [qty, setQty] = useState(0)
     const { id } = useParams()
     const [item] = useState(id)
     const [data, setData] = useState({})
@@ -15,8 +35,6 @@ function Music() {
         .then(res => setData(res.data.music))
         .catch(err => console.log(err))
     }, [item])
-
-    console.log(data)
 
     return (
         <div className="music-box">
@@ -47,9 +65,13 @@ function Music() {
                 <input 
                     type="text" 
                     placeholder="Quantiy"
+                    onChange={(e) => setQty(parseInt(e.target.value))}
                     className="qty-music-box" 
                 />
-                <button className="button-order">Order</button>
+                <button 
+                    className="button-order"
+                    onClick={() => handleAddToCart(data, qty)}
+                >Order</button>
             </div>
         </div>
     )

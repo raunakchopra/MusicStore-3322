@@ -16,7 +16,6 @@ const logInHandler = async (email, password) => {
     .catch(err => console.log(err))
     .then(alert('Account Logged In'))
 
-    console.log(user)
     localStorage.setItem('user', JSON.stringify(user))
 }
 

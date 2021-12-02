@@ -22,8 +22,7 @@ function MainPage() {
         })
         .catch(err => console.log(err))
 
-        // const loggedInUser = JSON.parse(localStorage.getItem("user"));
-        
+        const loggedInUser = JSON.parse(localStorage.getItem("user"));
     }, [])
 
     const handleFilterData = (category) => {

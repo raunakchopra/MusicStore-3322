@@ -6,6 +6,8 @@ import Login from './screens/Login'
 import MainPage from './screens/MainPage';
 import Music from './screens/Music';
 import SearchPage from './screens/SearchPage';
+import Cart from './screens/Cart';
+import Checkout from './screens/Checkout'
 
 function App() {
   return (
@@ -27,6 +29,12 @@ function App() {
           </Route>
           <Route exact path="/music/:id">
             <Music />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </div>

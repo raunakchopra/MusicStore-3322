@@ -63,13 +63,13 @@
 
 .cart-qty{
     font-family: 'Inter';
-    width: 30px;
+    width: 25px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     text-align: center;
     display: flex;
     margin-left: -10px;
-    padding-left: 5px;
+    padding-left: 10px;
     color: white;
     align-items: center;
     background-color: rgb(68, 81, 255);

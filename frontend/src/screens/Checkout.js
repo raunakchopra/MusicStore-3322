@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Signup from './Signup';
 import './css/checkout.css'
 
 function Checkout() {
+    const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem("user")))
+    const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cart")))
+
+    let totalQty = 0;
+    let totalPrice = 0
+    if(cartItems !== null){
+        for(let i = 0; i<cartItems.length; ++i){
+            totalPrice += (cartItems[i].data.price * cartItems[i].qty)
+            totalQty += cartItems[i].qty
+        }
+    }
     return (
         <div className="checkout-container">
-            <Signup />
+            {
+                loggedInUser === null ? <Signup /> : ""
+            }
             <div className="addressDetailsContainer">
                 <div>
                     <div className="addressItemContainer">
@@ -80,57 +93,27 @@ function Checkout() {
                     "overflow-y": "auto",
                     "height": "35%"
                 }}>
-                    <div className="order-item-container">
-                        <div className="order-col-name">
-                            <p>{musicData.name}</p>
-                        </div>
-                        <div className="order-col-qty">
-                            <p>Quantity: 1</p>
-                        </div>
-                        <div className="order-col-price">
-                            <p>Price: {musicData.price}</p>
-                        </div>
-                    </div>
-                    <div className="order-item-container">
-                        <div className="order-col-name">
-                            <p>{musicData.name}</p>
-                        </div>
-                        <div className="order-col-qty">
-                            <p>Quantity: 1</p>
-                        </div>
-                        <div className="order-col-price">
-                            <p>Price: {musicData.price}</p>
-                        </div>
-                    </div>
-
-                    <div className="order-item-container">
-                        <div className="order-col-name">
-                            <p>{musicData.name}</p>
-                        </div>
-                        <div className="order-col-qty">
-                            <p>Quantity: 1</p>
-                        </div>
-                        <div className="order-col-price">
-                            <p>Price: {musicData.price}</p>
-                        </div>
-                    </div>
-                    <div className="order-item-container">
-                        <div className="order-col-name">
-                            <p>{musicData.name}</p>
-                        </div>
-                        <div className="order-col-qty">
-                            <p>Quantity: 1</p>
-                        </div>
-                        <div className="order-col-price">
-                            <p>Price: {musicData.price}</p>
-                        </div>
-                    </div>
+                    {
+                        cartItems.map((cartItem) => (
+                            <div className="order-item-container">
+                                <div className="order-col-name">
+                                    <p>{cartItem.data.name}</p>
+                                </div>
+                                <div className="order-col-qty">
+                                    <p>Quantity: {cartItem.qty}</p>
+                                </div>
+                                <div className="order-col-price">
+                                    <p>Price: {cartItem.qty * cartItem.data.price}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
                 <div className="numbers">
-                    <p><b>Total Item Price:</b> HKD 400</p>
-                    <p><b>Total Quantity:</b> 2</p>
+                    <p><b>Total Item Price:</b> HKD {totalPrice}</p>
+                    <p><b>Total Quantity:</b> {totalQty}</p>
                     <p><b>Shipping Charges:</b> HKD 0</p>
-                    <p><b>Total Price:</b> HKD 400</p>
+                    <p><b>Total Price:</b> HKD {totalPrice}</p>
                 </div>
                 <button>Confirm</button>
             </div>
