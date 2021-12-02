@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from "react-router-dom";
+
 import './css/navbar.css'
 function NavBar() {
+    const [query, setQuery] = useState("")
+
     return (
         <div className="container">
             <img 
@@ -13,8 +17,9 @@ function NavBar() {
                     className="inputSearchBox"
                     type="text"
                     placeholder="Search"
+                    onChange={(e) => setQuery(e.target.value)}
                 />
-                <button className="searchButton">Search</button>
+                <Link to={`/search/${query}`}><button className="searchButton">Search</button></Link>
             </div>
             <div className="buttonContainer">
                 <button className="searchButton">Sign In</button>

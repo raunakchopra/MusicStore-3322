@@ -5,6 +5,7 @@ import Signup from './screens/Signup';
 import Login from './screens/Login'
 import MainPage from './screens/MainPage';
 import Music from './screens/Music';
+import SearchPage from './screens/SearchPage';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Switch>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/search/:query">
+            <SearchPage />
           </Route>
           <Route exact path="/login">
             <Login />
