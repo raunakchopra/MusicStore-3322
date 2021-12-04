@@ -7,7 +7,8 @@ import MainPage from './screens/MainPage';
 import Music from './screens/Music';
 import SearchPage from './screens/SearchPage';
 import Cart from './screens/Cart';
-import Checkout from './screens/Checkout'
+import Checkout from './screens/Checkout';
+import CategoryPage from './screens/CategoryPage';
 
 function App() {
   return (
@@ -18,9 +19,9 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          <Route exact path="/search/:query">
+          {/* <Route exact path="/search/:query">
             <SearchPage />
-          </Route>
+          </Route> */}
           <Route exact path="/login">
             <Login />
           </Route>
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route exact path="/checkout">
             <Checkout />
+          </Route>
+          <Route path="/category">
+            <CategoryPage />
           </Route>
         </Switch>
       </div>

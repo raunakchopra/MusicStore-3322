@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 
 import './css/navbar.css'
+
+const handleLogOut = () => {
+    console.log('Hi')
+    localStorage.removeItem("user")
+    alert("Logged Out! Thank you")
+    window.location.reload()
+}
+
 function NavBar() {
     const loggedInUser = JSON.parse(localStorage.getItem("user"));
     const [query, setQuery] = useState("")
@@ -13,15 +21,16 @@ function NavBar() {
             cartQty += currCart[i].qty
         }
     }
-
-
+    
     return (
         <div className="container">
-            <img 
-                src="https://i.ibb.co/hW2jXvG/spotify-512.png" 
-                className="logo"
-                alt="logo"
-            />
+            <Link to="/">
+                <img 
+                    src="https://i.ibb.co/hW2jXvG/spotify-512.png" 
+                    className="logo"
+                    alt="logo"
+                />
+            </Link>
             <div>
                 <input 
                     className="inputSearchBox"
@@ -29,11 +38,11 @@ function NavBar() {
                     placeholder="Search"
                     onChange={(e) => setQuery(e.target.value)}
                 />
-                <Link to={`/search/${query}`}><button className="searchButton">Search</button></Link>
+                <Link to={`/?query=${query}`}><button className="searchButton">Search</button></Link>
             </div>
             <div className="buttonContainer">
-                { loggedInUser === null ? <button className="searchButton">Sign In</button> : ""}
-                { loggedInUser === null ? <button className="searchButton createAccountButton">Create Account</button> : "" }
+                { loggedInUser === null ? <Link to="/login"><button className="searchButton">Sign In</button></Link> : <button className="searchButton" onClick={() => handleLogOut()}>Sign Out</button>}
+                { loggedInUser === null ? <Link to="/signup"><button className="searchButton createAccountButton">Create Account</button></Link> : "" }
                 <button className="cartButton">Cart</button>
                 <div className="cart-qty">{cartQty}</div>
             </div>

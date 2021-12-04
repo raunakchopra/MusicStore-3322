@@ -67,6 +67,7 @@
 .checkout-button{
     height: 40px;
     width: 140px;
+    margin-bottom: 20px;
     background-color: rgb(68, 81, 255);
     font-family: 'Inter';
     border: none;

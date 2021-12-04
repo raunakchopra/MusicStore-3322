@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from 'axios'
 import MusicBox from '../components/MusicBox'
 
@@ -8,60 +8,37 @@ import { faDrum, faGuitar } from '@fortawesome/free-solid-svg-icons'
 
 import './css/MainPage.css'
 
-function MainPage() {
-    const [musicData, setMusicData] = useState([])
+function CategoryPage() {
     const [filterData, setFilterData] = useState([])
 
-    let search = ''
     const location = useLocation()
-    if(location.search !== ''){
-        search = location.search.slice(7)
-    }
 
+    let category = location.search.slice(10)
 
     useEffect(() => {
+        if(category === "late%2019th"){
+            category = "late 19th"
+        }
         axios.get('http://localhost:8080/v1/music/', {
         'Access-Control-Allow-Origin': "http://localhost:8080"
         })
         .then(res => {
-            if(search !== ''){
-                console.log(search)
-                search = search.split(" ")
-                let temp = []
-                for(let j = 0; j<search.length; j++){
-                    for(let i=0; i<res.data.musicItems.length; ++i){
-                        if(res.data.musicItems[i].name.includes(search[j]) || 
-                        res.data.musicItems[i].composer.includes(search[j])) {
-                            temp.push(res.data.musicItems[i])
-                        }
-                    }
+            let temp = []
+            for(let i = 0; i< res.data.musicItems.length; ++i){
+                if(res.data.musicItems[i].category.toLowerCase() === category){
+                    temp.push(res.data.musicItems[i])
                 }
-                setMusicData(temp)
             }
-            else{
-                setMusicData(res.data.musicItems)
-            }
+            setFilterData(temp)
         })
         .catch(err => console.log(err))
-    }, [search])
-
-    const handleFilterData = (category) => {
-        let temp = []
-        for(let i=0; i<musicData.length; ++i){
-            if(musicData[i].category === category){
-                temp.push(musicData[i])
-            }
-        }
-        setFilterData(temp)
-    }
+    }, [category])
 
     return (
         <div className="mainpage-container">
             <div className="side-section">
                 <p className="category-title">Categories</p>
-                <Link 
-                    to="/category?category=classical"
-                >
+                <Link to="/category?category=classical">
                     <div className="category-container">
                         <FontAwesomeIcon className="category-icon" icon={faDrum}/>
                         <p>Classical</p>
@@ -74,12 +51,12 @@ function MainPage() {
                     </div>
                 </Link>
                 <Link to="/category?category=romantic">
-                    <div className="category-container" >
+                    <div className="category-container">
                         <FontAwesomeIcon className="category-icon" icon={faDrum}/>
                         <p>Romantic</p>
                     </div>
                 </Link>
-                <Link to="/category?category=late_19th">
+                <Link to="/category?category=late 19th">
                     <div className="category-container">
                         <FontAwesomeIcon className="category-icon" icon={faGuitar}/>
                         <p>Late 19th</p>
@@ -88,11 +65,11 @@ function MainPage() {
             </div>
             <div className="main-section">
                 {
-                    musicData.map((musicItem) => <Link to={`/music/${musicItem._id}`}><MusicBox item={musicItem} /></Link>)
+                    filterData.map((musicItem) => <Link to={`/music/${musicItem._id}`}><MusicBox item={musicItem} /></Link>)
                 }
             </div>
         </div>
     )
 }
 
-export default MainPage
+export default CategoryPage

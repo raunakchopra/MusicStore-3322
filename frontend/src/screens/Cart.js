@@ -3,6 +3,7 @@ import './css/Cart.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash,  } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const handleDelete = ( id ) => {
     let currCart = JSON.parse(localStorage.getItem("cart"))
@@ -47,7 +48,13 @@ function Cart() {
                     ))
                 }
             </div>
-            <button className="checkout-button"> Checkout </button>
+            <div style={{
+                "display": "flex",
+                "flexDirection": "column"
+            }}>
+                <Link to="/checkout"><button className="checkout-button">Checkout</button></Link>
+                <Link to="/"><button className="checkout-button"> Back </button></Link>
+            </div>
         </div>
     )
 }

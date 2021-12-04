@@ -1,22 +1,30 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { Link } from "react-router-dom";
 import './css/Login.css'
 
 const logInHandler = async (email, password) => {
-    let user
-    const userDeatils = {
-        email,
-        password
+    
+    if(email === '' || password === ''){
+        alert("Please fill the empty fields and try again!")
     }
+    else{
+        let user
+        const userDeatils = {
+            email,
+            password
+        }
 
-    await axios.post('http://localhost:8080/v1/access/login', userDeatils ,{
-        'Access-Control-Allow-Origin': "http://localhost:8080"
-    })
-    .then(res => user = res.data)
-    .catch(err => console.log(err))
-    .then(alert('Account Logged In'))
+        await axios.post('http://localhost:8080/v1/access/login', userDeatils ,{
+            'Access-Control-Allow-Origin': "http://localhost:8080"
+        })
+        .then(res => user = res.data)
+        .catch(err => console.log(err))
+        .then(alert('Account Logged In'))
 
-    localStorage.setItem('user', JSON.stringify(user))
+        localStorage.setItem('user', JSON.stringify(user))
+        window.location.reload()
+    }
 }
 
 function Login() {
@@ -39,7 +47,7 @@ function Login() {
             <div>    
                 <label> Password </label>
                 <input 
-                    type="text"
+                    type="password"
                     placeholder="******" 
                     onChange={(e) => setPassword(e.target.value)}
                 />
@@ -47,7 +55,7 @@ function Login() {
             <button
                 onClick={() => logInHandler(email, password)}
             >Submit</button>
-            <p className="signup-link">Create an Account!</p>
+            <Link to="/signup"><p className="signup-link">Create an Account!</p></Link>
         </div>
     )
 }

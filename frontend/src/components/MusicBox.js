@@ -6,7 +6,6 @@ function MusicBox(props) {
     const musicItem = props.item;
     return (
         <div className="musicbox-container">
-            {/* name, image, composer, price */}
             <img 
                 className="music-image"
                 alt="music_image"
@@ -14,6 +13,9 @@ function MusicBox(props) {
             <p className="musicbox-name">{musicItem.name}</p>
             <p>Composer: <b>{musicItem.composer}</b></p>
             <p>Price: <b>HKD{musicItem.price}</b></p>
+            {
+                musicItem.new_arrival ? <p className="new-arrival">New Arrival!</p> : ""
+            }
         </div>
     )
 }

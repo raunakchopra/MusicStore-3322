@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import './css/Login.css'
+import { Link } from "react-router-dom";
 
-const signUpHandler = (email, password) => {
-    const userDeatils = {
-        email,
-        password
+const signUpHandler = async (email, password) => {
+    if(email === '' || password === ''){
+        alert("Please fill the empty fields and try again!")
     }
-;
-    axios.post('http://localhost:8080/v1/user/signup', userDeatils ,{
-        'Access-Control-Allow-Origin': "http://localhost:8080"
-    })
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-    .then(alert('Account Successfully Created'))
+    else {
+        const userDeatils = {
+            email,
+            password
+        };
+        await axios.post('http://localhost:8080/v1/user/signup', userDeatils ,{
+            'Access-Control-Allow-Origin': "http://localhost:8080"
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+        .then(alert('Account Successfully Created'))
 
-    logInHandler(email, password)
+        logInHandler(email, password)
+    }
 }
 
 const logInHandler = async (email, password) => {
@@ -50,21 +55,23 @@ function Signup() {
                 <label> Email </label>
                 <input 
                     type="text"
-                    placeholder="youremail@mail.com" 
+                    placeholder="Desired Username" 
                     onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
             <div>    
                 <label> Password </label>
                 <input 
-                    type="text"
-                    placeholder="******" 
+                    type="password"
+                    placeholder="Desired Password" 
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
-            <button 
+            <button
+                style={{"margin-bottom" :"10px"}}
                 onClick={() => signUpHandler(email, password)}
             >Submit</button>
+            <Link to="/login"><button style={{"width": "30%", "paddingLeft": "15px"}}>Back</button></Link>
         </div>
     )
 }
