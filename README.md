@@ -1,2 +1,2 @@
 # MusicStore-3322
-node_modules
+Codebase for the final Project for Web Development Course
