@@ -5,10 +5,10 @@ import Signup from './screens/Signup';
 import Login from './screens/Login'
 import MainPage from './screens/MainPage';
 import Music from './screens/Music';
-import SearchPage from './screens/SearchPage';
 import Cart from './screens/Cart';
 import Checkout from './screens/Checkout';
 import CategoryPage from './screens/CategoryPage';
+import Invoice from './screens/Invoice';
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          {/* <Route exact path="/search/:query">
-            <SearchPage />
-          </Route> */}
+          <Route exact path="/invoice">
+            <Invoice />
+          </Route>
           <Route exact path="/login">
             <Login />
           </Route>

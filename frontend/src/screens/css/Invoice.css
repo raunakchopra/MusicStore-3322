@@ -1,0 +1,40 @@
+.invoice-container{
+    margin-top: 90px;
+}
+
+.title-invoice{
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.invoice-address-container{
+    width: 50%;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: 'black';
+}
+
+.invoice-label{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.invoice-info-container{
+    font-family: 'Inter';
+    font-size: 20px;
+    display: flex;
+    margin-bottom: 5px;
+    margin-right: 15px;
+}
+
+.invoice-sub-container{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.thank-you{
+    margin-top: 10px;
+    text-align: center;
+}

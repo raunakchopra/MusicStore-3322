@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import './css/navbar.css'
 
 const handleLogOut = () => {
-    console.log('Hi')
-    localStorage.removeItem("user")
+    localStorage.clear()
     alert("Logged Out! Thank you")
     window.location.reload()
 }
@@ -43,8 +42,10 @@ function NavBar() {
             <div className="buttonContainer">
                 { loggedInUser === null ? <Link to="/login"><button className="searchButton">Sign In</button></Link> : <button className="searchButton" onClick={() => handleLogOut()}>Sign Out</button>}
                 { loggedInUser === null ? <Link to="/signup"><button className="searchButton createAccountButton">Create Account</button></Link> : "" }
-                <button className="cartButton">Cart</button>
-                <div className="cart-qty">{cartQty}</div>
+                <Link to="/cart">
+                    <button className="cartButton">Cart</button>
+                    <div className="cart-qty">{cartQty}</div>
+                </Link>
             </div>
         </div>
     )
