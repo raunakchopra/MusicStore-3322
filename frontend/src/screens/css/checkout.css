@@ -1,5 +1,6 @@
 .checkout-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
 }
@@ -148,4 +149,8 @@
     margin-top: 15px;
     padding-bottom: 15px;
     border-bottom: solid 2px #e9ecef;
+}
+
+@media screen and (max-width: 768px) {
+    
 }

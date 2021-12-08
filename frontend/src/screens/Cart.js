@@ -28,31 +28,34 @@ function Cart() {
                 <p className="cart-title">Cart</p>
                 <hr className="hr" />
                 {
-                    cartItems.map((cartItem, index) => (
-                        <div className="item-details-container">
-                            <img className="item-img" src={cartItem.data.music_image} alt="music-item" />
-                            <div className="item-details-text">
-                                <div>
-                                    <p>{cartItem.data.name}</p>
-                                    <p>{cartItem.data.composer}</p>
-                                    <p>HKD {cartItem.data.price}</p>
-                                </div>
-                                <div className="qty-icon-container">
-                                    <p>Quantity: {cartItem.qty}</p>
-                                    <FontAwesomeIcon
-                                        onClick = { () => handleDelete(index)} 
-                                        className="del-icon" icon={faTrash}/>
+                    cartItems !== null ? cartItems.map((cartItem, index) => (
+                            <div className="item-details-container">
+                                <img className="item-img" src={cartItem.data.music_image} alt="music-item" />
+                                <div className="item-details-text">
+                                    <div>
+                                        <p>{cartItem.data.name}</p>
+                                        <p>{cartItem.data.composer}</p>
+                                        <p>HKD {cartItem.data.price}</p>
+                                    </div>
+                                    <div className="qty-icon-container">
+                                        <p>Quantity: {cartItem.qty}</p>
+                                        <FontAwesomeIcon
+                                            onClick = { () => handleDelete(index)} 
+                                            className="del-icon" icon={faTrash}/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
+                        )) : alert("Cart is empty") 
                 }
             </div>
             <div style={{
                 "display": "flex",
                 "flexDirection": "column"
             }}>
-                <Link to="/checkout"><button className="checkout-button">Checkout</button></Link>
+                {
+                    cartItems !== null ? <Link to="/checkout"><button className="checkout-button">Checkout</button></Link>
+                    : ""
+                }
                 <Link to="/"><button className="checkout-button"> Back </button></Link>
             </div>
         </div>
@@ -60,15 +63,3 @@ function Cart() {
 }
 
 export default Cart;
-
-const musicData = {
-    name: "Claudio Monteverdi: Madrigals",
-    category: "Baroque",
-    composer: "Claudio Monteverdi",
-    description:"Claudio Giovanni Antonio Monteverdi was an Italian composer, gambist, singer and Roman Catholic priest. Monteverdi's work, often regarded as revolutionary, marked the transition from the Renaissance style of music to that of the Baroque period...",
-    price: 200,
-    published: "1587-1651",
-    new_arrival: false,
-    music_image: "https://i.ibb.co/sg85gxq/img-5.jpg",
-    music_clip: ""
-}

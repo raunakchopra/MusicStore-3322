@@ -32,6 +32,9 @@
 
 .item-img{
     border: none;
+    height: 180px;
+    width: 35%;
+    margin-right: 10px;
     border-radius: 10px;
 }
 
@@ -50,6 +53,7 @@
     flex-direction: column;
     font-family: 'Inter';
     font-size: 18px;
+    width: 64%;
 }
 
 .del-icon{
@@ -78,4 +82,18 @@
 
 .checkout-button:hover{
     background-color: rgb(24, 39, 215);
+}
+
+@media screen and (max-width: 768px) {
+    .cart-container{
+        margin-top: 150px;
+        height: 500px;
+        width: 500px;
+        padding-top: 16px;
+        padding-left: 36px;
+        padding-right: 36px;
+        overflow-y: auto;
+        padding-bottom: 40px;
+        margin-right: 10px;
+    }
 }

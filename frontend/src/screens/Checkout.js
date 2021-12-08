@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Link } from "react-router-dom";
 import Signup from './Signup';
 import './css/checkout.css'
 
@@ -146,7 +146,7 @@ function Checkout() {
                     <p><b>Shipping Charges:</b> HKD 0</p>
                     <p><b>Total Price:</b> HKD {totalPrice}</p>
                 </div>
-                <button>Confirm</button>
+               <Link to="/invoice"><button>Confirm</button></Link>
             </div>
         </div>
     )

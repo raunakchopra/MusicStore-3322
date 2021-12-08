@@ -19,49 +19,41 @@ function Invoice() {
         <div className="invoice-container">
             <p className="title-invoice"> Invoice Page </p>
             <div style={{"display": "flex"}}>
-                <div className="invoice-address-container">
-                    <div className="invoice-sub-container">
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">Full Name:</p>
-                            <p>{address.name}</p>
-                        </div>
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">Company:</p>
-                            <p> {address.company ? address.company : "NA" }</p>
-                        </div>
-                    </div>
-                    <div className="invoice-sub-container">
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">Address Line 1:</p>
-                            <p>{address.add1 ? address.add1 : "NA"}</p>
-                        </div>
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">Addess Line 2:</p>
-                            <p>{address.add2 ? address.add2 : "NA"}</p>
-                        </div>
-                    </div>
-                    <div className="invoice-sub-container">
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">City:</p>
-                            <p> {address.city ? address.city : ""}</p>
-                        </div>
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">Region:</p>
-                            <p>{address.region ? address.region : ""}</p>
-                        </div>
-                    </div>
-                    <div className="invoice-sub-container">
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">Country:</p>
-                            <p>{address.country ? address.country : ""}</p>
-                        </div>
-                        <div className="invoice-info-container">
-                            <p className="invoice-label">Postcode:</p>
-                            <p> {address.postCode ? address.postCode : "NA"}</p>
-                        </div>
-                    </div>
+                <div style={{
+                    "marginTop": "10px"
+                }}>
+                    <table>
+                        <tbody>
+                            <tr className="table">
+                                <th className="table">Full Name</th>
+                                <td className="table">{address.name}</td>
+                                <th className="table">Company</th>
+                                <td className="table">{address.company ? address.company : "NA" }</td>
+                            </tr>
+                            <tr className="table">
+                                <th className="table">Address Line 1</th>
+                                <td className="table">{address.add1 ? address.add1 : "NA"}</td>
+                                <th className="table">Address Line 2</th>
+                                <td className="table">{address.add2 ? address.add2 : "NA"}</td>
+                            </tr>
+                            <tr>
+                                <th className="table">City</th>
+                                <td className="table">{address.city ? address.city : "NA"}</td>
+                                <th className="table">Region</th>
+                                <td className="table">{address.region ? address.region : "NA"}</td>
+                            </tr>
+                            <tr>
+                                <th className="table">Country</th>
+                                <td className="table">{address.country ? address.country : "NA"}</td>
+                                <th className="table">Postcode</th>
+                                <td className="table">{address.postCode ? address.postCode : "NA"}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div className="orderDetailsContainer">
+                <div style={{
+                    "marginTop": "10px"
+                }} className="orderDetailsContainer">
                     <p className="order-title">Thank You!</p>
                     <div style={{
                         "overflow-y": "auto",
@@ -91,7 +83,10 @@ function Invoice() {
                     </div>
                     <div>
                         <p className="thank-you">Your order will be delivered within 7 days.</p>
-                        <Link to="/"><button> OK </button></Link>
+                        <Link to="/"><button onClick={() => {
+                            localStorage.removeItem("cart")
+                            window.location.reload()
+                        }}> OK </button></Link>
                     </div>
                 </div>
             </div>

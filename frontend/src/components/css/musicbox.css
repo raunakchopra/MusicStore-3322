@@ -42,3 +42,26 @@ a {
     font-weight: bold;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    .musicbox-container{
+        padding: 10px 20px;
+        height: 320px;
+        width: 220px;
+        margin-left: 5px;
+        margin-bottom: 30px;
+    }
+    .music-image{
+        height: 190px !important;
+        width: 190px !important;
+        margin-bottom: 0px;
+    }
+    .musicbox-name{
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    
+    .musicbox-container p{
+        font-size: 12px;
+    }
+}

@@ -43,8 +43,10 @@ function NavBar() {
                 { loggedInUser === null ? <Link to="/login"><button className="searchButton">Sign In</button></Link> : <button className="searchButton" onClick={() => handleLogOut()}>Sign Out</button>}
                 { loggedInUser === null ? <Link to="/signup"><button className="searchButton createAccountButton">Create Account</button></Link> : "" }
                 <Link to="/cart">
-                    <button className="cartButton">Cart</button>
-                    <div className="cart-qty">{cartQty}</div>
+                    <div style={{"display": "flex"}}>
+                        <button className="cartButton">Cart</button>
+                        <div className="cart-qty">{cartQty}</div>
+                    </div>
                 </Link>
             </div>
         </div>

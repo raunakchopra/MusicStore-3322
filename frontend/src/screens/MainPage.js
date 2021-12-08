@@ -18,7 +18,6 @@ function MainPage() {
         search = location.search.slice(7)
     }
 
-
     useEffect(() => {
         axios.get('http://localhost:8080/v1/music/', {
         'Access-Control-Allow-Origin': "http://localhost:8080"

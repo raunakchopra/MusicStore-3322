@@ -24,6 +24,7 @@ const logInHandler = async (email, password) => {
 
         localStorage.setItem('user', JSON.stringify(user))
         window.location.reload()
+        window.location.href = '/'
     }
 }
 
