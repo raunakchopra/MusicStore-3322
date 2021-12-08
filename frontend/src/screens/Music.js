@@ -39,16 +39,14 @@ function Music() {
     return (
         <div>
             <div className="music-box">
-                <p className="navigator-musicbox"><Link to="/"> Home </Link > {data.name}</p>
+                <p className="navigator-musicbox"><Link to="/"> Home </Link > {'>'} {data.name}</p>
                 <h1 className="music-box-title">{data.name}</h1>
                 <img 
                     src={data.music_image}
                     alt="musicimg"
                     className="music-image"
                 />
-                <audio controls className="audio">
-                    <source src="horse.ogg" type="audio/ogg" />
-                    <source src="horse.mp3" type="audio/mpeg" />
+                <audio controls className="audio" src={data.music_clip} type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>    
                 <p className="music-box-desc">

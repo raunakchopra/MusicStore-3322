@@ -8,7 +8,7 @@
         "published": "1788",
         "new_arrival": true,
         "music_image": "https://i.ibb.co/C8bRr5P/img-1.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/76/92576-005-10D759AA/Excerpt-movement-Allegro-vivace-Mozarts-Symphony-No-1953.mp3"
     },
     {
         "name": "Scherzo: Allegro vivace con delicatezza",
@@ -19,23 +19,9 @@
         "published": "1828",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/jTYsGjL/The-young-Schubert-oil-on-canvas-83-3-x-70-cm-early-19th-century.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/72/92572-005-358EF606/movement-allegro-Emil-Guilels-Molto-recording-Piano-1951.mp3"
     },
     {
-<<<<<<< HEAD
-        "name": "Claudio Monteverdi: Madrigals",
-        "category": "Baroque",
-        "composer": "Claudio Monteverdi",
-        "description":"Claudio Giovanni Antonio Monteverdi was an Italian composer, gambist, singer and Roman Catholic priest. Monteverdi's work, often regarded as revolutionary, marked the transition from the Renaissance style of music to that of the Baroque period...",
-        "price": 200,
-        "published": "1587-1651",
-        "new_arrival": false,
-        "music_image": "https://i.ibb.co/sg85gxq/img-5.jpg",
-        "music_clip": ""
-    },
-    {
-=======
->>>>>>> ac9e6228e08ebb522bdaeca4cbb81c1aba014177
         "name": "Bach, J.S.: Goldberg Variations, BWV 988",
         "category": "Baroque",
         "composer": "J.S. Bach",
@@ -44,7 +30,7 @@
         "published": "1741",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/NLQtLR4/img-4.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/03/92203-005-0C656FBD/Allegro-JS-Bach-Brandenburg-Concerto-BWV-1046-1949.mp3"
     },
     {
         "name": "Mussorgsky, Modest: Night on Bald Mountain",
@@ -55,7 +41,7 @@
         "published": "1867",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/sg85gxq/img-5.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/38/92538-005-98723F5B/Excerpt-section-Assembly-of-Witches-arrangement-Their-1952.mp3"
     },
     {
         "name": "Bach: Concerto No. 1 in D Major",
@@ -66,7 +52,7 @@
         "published": "1791",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/N7J2ZjP/img-6.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/91/92191-005-0132B3CB/Excerpt-movement-Allegro-Allegrissimo-JS-Wanda-Landowska-keyboard-1938.mp3"
     },
     {
         "name": "Frederic Chopin: Piano Concerto No. 1 in E Minor",
@@ -77,7 +63,7 @@
         "published": "1830",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/StzbHqx/img-7.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/83/92183-005-B292FDA3/Allegro-maestoso-recording-Frederic-Chopin-Claudio-Arrau-1954.mp3"
     },
     {
         "name": "Franz Liszt: Christus",
@@ -88,7 +74,7 @@
         "published": "1855-1866",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/gvvQYZw/img-8.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/97/92297-005-FF3DFA83/March-of-the-Three-Holy-Kings-Liszt-Christus.mp3"
     },
     {
         "name": "Claude Debussy: Children's Corner",
@@ -99,7 +85,7 @@
         "published": "1908",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/Kb13Wyx/img-9.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/46/92246-005-E5E6E408/theme-Prelude-Claude-Debussy-lapres-midi-dun-faune-1954.mp3"
     },
     {
         "name": "Robert Schumann: Papillons",
@@ -110,7 +96,7 @@
         "published": "1831",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/xYfrxhs/img-10.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/88/92388-005-BDD9531F/Schumann-Papillons-Opus-2.mp3"
     },
     {
         "name": "Symphony No. 3",
@@ -121,7 +107,7 @@
         "published": "1902",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/VvfLqtj/img-11.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/85/92385-005-19662438/Excerpt-movement-Hildegard-Rossl-Majdan-D-Minor-recording-1952.mp3"
     },
     {
         "name": "Liszt: Bagatelle sans tonalite",
@@ -132,6 +118,6 @@
         "published": "1872",
         "new_arrival": false,
         "music_image": "https://i.ibb.co/zGWJ30P/img-12.jpg",
-        "music_clip": ""
+        "music_clip": "https://cdn.britannica.com/97/92297-005-FF3DFA83/March-of-the-Three-Holy-Kings-Liszt-Christus.mp3"
     }
 ]

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import './css/Invoice.css'
 
 function Invoice() {
-    const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cart")))
-    const [address, setAddress] = useState(JSON.parse(localStorage.getItem("address")))
+    const [cartItems] = useState(JSON.parse(localStorage.getItem("cart")))
+    const [address] = useState(JSON.parse(localStorage.getItem("address")))
 
     let totalQty = 0;
     let totalPrice = 0

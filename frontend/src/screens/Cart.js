@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './css/Cart.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -20,7 +20,7 @@ const handleDelete = ( id ) => {
 }
 
 function Cart() {
-    const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cart")))
+    const [cartItems] = useState(JSON.parse(localStorage.getItem("cart")))
 
     return (
         <div className="cart-mainContainer">

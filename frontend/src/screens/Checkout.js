@@ -8,8 +8,8 @@ const handleAddress = (address) => {
     localStorage.setItem('address', JSON.stringify(address))
 }
 function Checkout() {
-    const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem("user")))
-    const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cart")))
+    const [loggedInUser] = useState(JSON.parse(localStorage.getItem("user")))
+    const [cartItems] = useState(JSON.parse(localStorage.getItem("cart")))
 
     const [name, setName] = useState("")
     const [add1, setAdd1] = useState("")

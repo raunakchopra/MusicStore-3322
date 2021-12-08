@@ -89,8 +89,22 @@ class MusicController {
         })
     }
 
-    async deleteOne(req, res, next){
-        
+    async createMany(req, res, next){
+       const { list } = req.body
+       
+       let musics;
+       try{
+            musics = await this.musicService.createMany({
+                list
+            })
+       }
+       catch(e){
+           return next(e)
+       }
+
+       return res.json({
+        musics
+       })
     }
 
     async updateOne(req, res, next){

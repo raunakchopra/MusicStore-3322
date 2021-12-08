@@ -10,7 +10,6 @@ import './css/MainPage.css'
 
 function MainPage() {
     const [musicData, setMusicData] = useState([])
-    const [filterData, setFilterData] = useState([])
     const [searchState, setSearchState] = useState(false)
     let search = ''
     const location = useLocation()
@@ -43,16 +42,6 @@ function MainPage() {
         })
         .catch(err => console.log(err))
     }, [search])
-
-    const handleFilterData = (category) => {
-        let temp = []
-        for(let i=0; i<musicData.length; ++i){
-            if(musicData[i].category === category){
-                temp.push(musicData[i])
-            }
-        }
-        setFilterData(temp)
-    }
 
     return (
         <div className="mainpage-container">
