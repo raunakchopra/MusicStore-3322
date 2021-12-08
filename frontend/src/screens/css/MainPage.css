@@ -3,14 +3,25 @@
     margin-top: 76px;
 }
 
+.navigator{
+    font-family: 'Inter';
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 .main-section{
     padding: 50px 40px;
-    display: flex;
     background-color:#f1f3f4;
     width: 85%;
+    margin-left:217px;
+}
+
+.main-section-inner{
+    display: flex;
+    background-color:#f1f3f4;
+    width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-left:217px;
     /* important */
 }
 .side-section{
@@ -62,7 +73,6 @@
     
     .main-section{
         padding: 40px 30px;
-        width: 85%;
         /* important */
     }
     .side-section{
@@ -77,7 +87,6 @@
     
     .main-section{
         padding: 30px 10px;
-        width: 85%;
         /* important */
     }
     .side-section{

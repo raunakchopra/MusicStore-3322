@@ -19,6 +19,11 @@
     padding-bottom: 50px;
 }
 
+.navigator-musicbox{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
 .music-box-info-text{
     display: flex;
     justify-content: space-between;

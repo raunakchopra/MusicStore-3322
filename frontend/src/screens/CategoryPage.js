@@ -64,9 +64,12 @@ function CategoryPage() {
                 </Link>
             </div>
             <div className="main-section">
-                {
-                    filterData.map((musicItem) => <Link to={`/music/${musicItem._id}`}><MusicBox item={musicItem} /></Link>)
-                }
+                <p className="navigator"><Link to="/">Home</Link> {'>'} {category}</p>
+                <div className="main-section-inner">
+                    {
+                        filterData.map((musicItem) => <Link to={`/music/${musicItem._id}`}><MusicBox item={musicItem} /></Link>)
+                    }
+                </div>
             </div>
         </div>
     )

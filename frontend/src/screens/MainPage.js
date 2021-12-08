@@ -11,7 +11,7 @@ import './css/MainPage.css'
 function MainPage() {
     const [musicData, setMusicData] = useState([])
     const [filterData, setFilterData] = useState([])
-
+    const [searchState, setSearchState] = useState(false)
     let search = ''
     const location = useLocation()
     if(location.search !== ''){
@@ -24,7 +24,7 @@ function MainPage() {
         })
         .then(res => {
             if(search !== ''){
-                console.log(search)
+                setSearchState(true)
                 search = search.split(" ")
                 let temp = []
                 for(let j = 0; j<search.length; j++){
@@ -86,9 +86,13 @@ function MainPage() {
                 </Link>
             </div>
             <div className="main-section">
-                {
-                    musicData.map((musicItem) => <Link to={`/music/${musicItem._id}`}><MusicBox item={musicItem} /></Link>)
-                }
+                <p className="navigator">Home</p>
+                { searchState ? <p className="navigator"> Searching Results</p> : ""}
+                <div className="main-section-inner">
+                    {
+                        musicData.map((musicItem) => <Link to={`/music/${musicItem._id}`}><MusicBox item={musicItem} /></Link>)
+                    }
+                </div>
             </div>
         </div>
     )
