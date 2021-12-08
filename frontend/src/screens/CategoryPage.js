@@ -19,9 +19,7 @@ function CategoryPage() {
         if(category === "late%2019th"){
             category = "late 19th"
         }
-        axios.get('http://localhost:8080/v1/music/', {
-        'Access-Control-Allow-Origin': "http://localhost:8080"
-        })
+        axios.get('https://music-store-3322.herokuapp.com/v1/music/')
         .then(res => {
             let temp = []
             for(let i = 0; i< res.data.musicItems.length; ++i){

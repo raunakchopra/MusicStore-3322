@@ -14,9 +14,7 @@ function SearchPage() {
     const [filterData, setFilterData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8080/v1/music/', {
-        'Access-Control-Allow-Origin': "http://localhost:8080"
-        })
+        axios.get('https://music-store-3322.herokuapp.com/v1/music/')
         .then(res => {
             let temp = []
             for(let i=0; i<res.data.musicItems.length; ++i){

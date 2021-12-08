@@ -15,9 +15,7 @@ const logInHandler = async (email, password) => {
             password
         }
 
-        await axios.post('http://localhost:8080/v1/access/login', userDeatils ,{
-            'Access-Control-Allow-Origin': "http://localhost:8080"
-        })
+        await axios.post('https://music-store-3322.herokuapp.com/v1/access/login', userDeatils)
         .then(res => user = res.data)
         .catch(err => console.log(err))
         .then(alert('Account Logged In'))

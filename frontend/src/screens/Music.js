@@ -29,9 +29,7 @@ function Music() {
     const [data, setData] = useState({})
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/v1/music/${item}`, {
-            'Access-Control-Allow-Origin': "http://localhost:8080"
-        })
+        axios.get(`https://music-store-3322.herokuapp.com/v1/music/${item}`)
         .then(res => setData(res.data.music))
         .catch(err => console.log(err))
     }, [item])

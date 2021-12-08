@@ -18,9 +18,7 @@ function MainPage() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:8080/v1/music/', {
-        'Access-Control-Allow-Origin': "http://localhost:8080"
-        })
+        axios.get('https://music-store-3322.herokuapp.com/v1/music/')
         .then(res => {
             if(search !== ''){
                 setSearchState(true)

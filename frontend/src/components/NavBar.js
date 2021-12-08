@@ -7,6 +7,7 @@ const handleLogOut = () => {
     localStorage.clear()
     alert("Logged Out! Thank you")
     window.location.reload()
+    window.location.href = '/'
 }
 
 function NavBar() {
@@ -40,7 +41,7 @@ function NavBar() {
                 <Link to={`/?query=${query}`}><button className="searchButton">Search</button></Link>
             </div>
             <div className="buttonContainer">
-                { loggedInUser === null ? <Link to="/login"><button className="searchButton">Sign In</button></Link> : <button className="searchButton" onClick={() => handleLogOut()}>Sign Out</button>}
+                { loggedInUser === null ? <Link to="/login"><button className="searchButton">Sign In</button></Link> : <Link to="/"><button className="searchButton" onClick={() => handleLogOut()}>Sign Out</button></Link>}
                 { loggedInUser === null ? <Link to="/signup"><button className="searchButton createAccountButton">Create Account</button></Link> : "" }
                 <Link to="/cart">
                     <div style={{"display": "flex"}}>
