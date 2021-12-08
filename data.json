@@ -119,5 +119,16 @@
         "new_arrival": false,
         "music_image": "https://i.ibb.co/zGWJ30P/img-12.jpg",
         "music_clip": "https://cdn.britannica.com/97/92297-005-FF3DFA83/March-of-the-Three-Holy-Kings-Liszt-Christus.mp3"
+    }, 
+    {
+        "name" : "Claudio Monteverdi: Madrigals",
+        "category" : "Baroque",
+        "composer" : "Claudio Monteverdi",
+        "description" : "Claudio Giovanni Antonio Monteverdi was an Italian composer, gambist, singer and Roman Catholic priest. Monteverdi's work, often regarded as revolutionary, marked the transition from the Renaissance style of music to that of the Baroque period...",
+        "price" : 200,
+        "published" : "1587-1651",
+        "new_arrival" : false,
+        "music_image" : "https://s3-us-west-2.amazonaws.com/textimgs/music/220px-Bernardo_Strozzi_-_Claudio_Monteverdi_%28c.1630%29.jpg",
+        "music_clip" : "https://cdn.britannica.com/91/92191-005-0132B3CB/Excerpt-movement-Allegro-Allegrissimo-JS-Wanda-Landowska-keyboard-1938.mp3",
     }
 ]
