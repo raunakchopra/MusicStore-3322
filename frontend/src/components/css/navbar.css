@@ -1,3 +1,165 @@
+/* .container{
+    height: 75px;
+    display: flex;
+    top:0px;
+    background-color: white;
+    width: 98%;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    border-bottom: solid 1px;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.inputSearchBox{
+    border-radius: 20px;
+    border: solid 1px black;
+    padding-left: 20px;
+}
+
+.inputSearchBox:focus{
+    outline: none;
+}
+
+.searchButton{
+    cursor: pointer;
+    background-color: rgb(68, 81, 255);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+.cartButton{
+    cursor: pointer;
+    background-color: rgb(68, 81, 255);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+.cartButton:hover{
+    background-color: rgb(24, 39, 215);
+}
+
+.cart-qty{
+    font-family: 'Inter';
+    text-align: center;
+    display: flex;
+    color: white;
+    align-items: center;
+    background-color: rgb(68, 81, 255);
+} */
+/* make this slower */
+/* .searchButton:hover{
+    background-color: rgb(24, 39, 215);
+} */
+
+/* .buttonContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.createAccountButton{
+} */
+
+.container{
+    height: 75px;
+    display: flex;
+    top:0px;
+    background-color: white;
+    width: 98%;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    border-bottom: solid 1px;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.inputSearchBox{
+    height: 35px;
+    width: 330px;
+    margin-left:310px;
+    margin-right: 15px ;
+    border-radius: 20px;
+    border: solid 1px black;
+    padding-left: 20px;
+}
+
+.inputSearchBox:focus{
+    outline: none;
+}
+
+.searchButton{
+    height: 35px;
+    width: 80px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: rgb(68, 81, 255);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+.cartButton{
+    height: 35px;
+    width: 80px;
+    font-size: 15px;
+    cursor: pointer;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(68, 81, 255);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+.cartButton:hover{
+    background-color: rgb(24, 39, 215);
+}
+
+.cart-qty{
+    font-family: 'Inter';
+    width: 25px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    display: flex;
+    margin-left: 3px;
+    padding-left: 10px;
+    color: white;
+    align-items: center;
+    background-color: rgb(68, 81, 255);
+}
+/* make this slower */
+.searchButton:hover{
+    background-color: rgb(24, 39, 215);
+}
+
+.buttonContainer{
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.createAccountButton{
+    width: 160px
+}
+
 @media screen and (max-width: 1024px) {
     .logo{
         height: 40px;
@@ -83,74 +245,4 @@
         width: 130px
     }
     
-}
-
-.container{
-    height: 75px;
-    display: flex;
-    top:0px;
-    background-color: white;
-    width: 98%;
-    position: fixed;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-    border-bottom: solid 1px;
-}
-
-.logo{
-    cursor: pointer;
-}
-
-.inputSearchBox{
-    border-radius: 20px;
-    border: solid 1px black;
-    padding-left: 20px;
-}
-
-.inputSearchBox:focus{
-    outline: none;
-}
-
-.searchButton{
-    cursor: pointer;
-    background-color: rgb(68, 81, 255);
-    border: none;
-    color: white;
-    font-weight: bold;
-    font-family: 'Inter';
-}
-
-.cartButton{
-    cursor: pointer;
-    background-color: rgb(68, 81, 255);
-    border: none;
-    color: white;
-    font-weight: bold;
-    font-family: 'Inter';
-}
-
-.cartButton:hover{
-    background-color: rgb(24, 39, 215);
-}
-
-.cart-qty{
-    font-family: 'Inter';
-    text-align: center;
-    display: flex;
-    color: white;
-    align-items: center;
-    background-color: rgb(68, 81, 255);
-}
-/* make this slower */
-.searchButton:hover{
-    background-color: rgb(24, 39, 215);
-}
-
-.buttonContainer{
-    display: flex;
-    justify-content: space-between;
-}
-
-.createAccountButton{
 }
