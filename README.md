@@ -1,4 +1,4 @@
-# MusicStore-3322
+# Online Music Store
 Codebase for the final Project for Web Development Course
 
 COMP3322 - Final Project - Music Store
